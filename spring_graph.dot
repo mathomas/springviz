@@ -1,0 +1,31 @@
+
+digraph G {
+    graph [ ratio="0.6" ];
+    node  [ shape=box, style=filled, fontname=helvetica, fontsize="16" ];
+    edge  [ ];
+        "dataSource" [fontcolor=white, color=steelblue4];
+            "orderDataSource" [fontcolor=white, color=steelblue4];
+            "transactionManager" [fontcolor=white, color=paleturquoise4];
+            "sqlMap" [];
+            "accountDao" [color=steelblue1];
+            "categoryDao" [color=steelblue1];
+            "productDao" [color=steelblue1];
+            "itemDao" [color=steelblue1];
+            "orderDao" [color=steelblue1];
+            "sequenceDao" [color=steelblue1];
+            "accountDao" -> "dataSource" [];
+        "accountDao" -> "sqlMap" [];
+        "categoryDao" -> "dataSource" [];
+        "categoryDao" -> "sqlMap" [];
+        "productDao" -> "dataSource" [];
+        "productDao" -> "sqlMap" [];
+        "itemDao" -> "dataSource" [];
+        "itemDao" -> "sqlMap" [];
+        "orderDao" -> "orderDataSource" [];
+        "orderDao" -> "sqlMap" [];
+        "orderDao" -> "sequenceDao" [];
+        "sequenceDao" -> "orderDataSource" [];
+        "sequenceDao" -> "sqlMap" [];
+        
+ }
+    
