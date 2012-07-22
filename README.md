@@ -3,7 +3,7 @@ springviz
 
 Simple XSLT/Ant project for building dot-based dependency graphs for Spring config files.  Requires dot to be installed on your system.
 
-/Right off the top, let me just say that this is pretty old code.  I haven't bothered keeping it up-to-date, but thought I'd put it out on GitHub so others could work on it if they care to./
+*Right off the top, let me just say that this is pretty old code.  I haven't bothered keeping it up-to-date, but thought I'd put it out on GitHub so others could work on it if they care to.*
 
 
 To run the example, just type the following at the command-line:
