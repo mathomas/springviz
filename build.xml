@@ -1,0 +1,42 @@
+<project name="SpringViz" default="gen-graph" basedir=".">
+    <property name="springviz.xslt.file" value="./springviz.xslt"/>
+    <property name="graph.file" value="spring_graph.dot"/>
+    <property name="graph.html" value="spring_graph.html"/>
+    <property name="graph.png" value="spring_graph.png"/>
+    <property name="dot.exe" value="/usr/local/bin/dot"/>
+    <property name="out.dir" value="."/>
+
+    <target name="gen-graph" description="Generates a .dot file">
+        <fail unless="config.file">
+        *** ERROR: The 'config.file' (your spring config XML file) system property must be defined.
+        </fail>
+
+        <xslt in="${config.file}"
+              out="${out.dir}/${graph.file}"
+              style="${springviz.xslt.file}" 
+              force="yes"
+        />
+    </target>
+
+
+    <!-- This bit is pretty OS-specific, but you should be able to hack it into -->
+    <!-- shape for your preferred OS pretty easily.                             -->
+    <target name="show-graph" description="Opens the generated .dot file for viewing" depends="gen-graph">
+        <exec executable="${dot.exe}">
+            <arg line="-Tpng -o ${out.dir}/${graph.png} ${out.dir}/${graph.file}"/>
+        </exec> 
+
+        <echo file="${out.dir}/${graph.html}">
+            &lt;html&gt;
+            &lt;body&gt;
+            &lt;image src="${graph.png}"&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </echo> 
+
+        <exec executable="open">
+            <arg line="${out.dir}/${graph.html}"/>
+        </exec> 
+    </target>
+</project>
+

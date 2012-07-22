@@ -1,0 +1,13 @@
+SpringViz is free (as in beer) software (if you can call an XSLT "software").
+
+I basically stole the approach for SpringViz from Eric Burke's 
+(http://www.ericburke.com/) "antgraph" utility, and applied it to 
+Spring Framework configurations.
+
+Props go to AT&T for making GraphViz and the "dot" notation available as Open Source.
+(http://www.research.att.com/sw/tools/graphviz/)
+
+If you find SpringViz of use, attribution would be nice.  Thanks.
+
+mike_thomas@yahoo.com
+http://www.samoht.com
